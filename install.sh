@@ -14,6 +14,7 @@ echo "🐱 Starting terminal setup (Catppuccin Mocha edition)..."
 echo "\n📦 Installing Homebrew packages..."
 brew install \
   zsh \
+  zsh-autosuggestions \
   tmux \
   starship \
   carapace \

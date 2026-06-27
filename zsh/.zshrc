@@ -49,6 +49,13 @@ bindkey -M vicmd 'vv' edit-command-line
 bindkey -M vicmd 'H' beginning-of-line
 bindkey -M vicmd 'L' end-of-line
 
+# ── Autosuggestions ──────────────────────────────────────────────────────────
+source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#585b70"   # Catppuccin surface2 — subtle grey
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
 # ── Completion ───────────────────────────────────────────────────────────────
 autoload -Uz compinit
 compinit -d "$XDG_CACHE_HOME/zsh/zcompdump"
