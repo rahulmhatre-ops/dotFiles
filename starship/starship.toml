@@ -8,8 +8,6 @@ $username\
 $character"""
 
 right_format = """
-$directory\
-[](fg:peach bg:green)\
 $git_branch\
 $git_status\
 [](fg:green bg:teal)\
@@ -19,9 +17,8 @@ $golang\
 $python\
 [](fg:teal bg:blue)\
 $docker_context\
-[](fg:blue bg:mauve)\
-$time\
-[ ](fg:mauve)"""
+[](fg:blue bg:mauve)"""
+
 palette = 'catppuccin_mocha'
 
 [palettes.catppuccin_mocha]
@@ -81,13 +78,14 @@ truncation_symbol = "…/"
 "Developer" = "󰲋 "
 
 [git_branch]
-symbol = ""
-style  = "bg:green"
-format = '[[ $symbol $branch ](fg:base bg:green)]($style)'
+format =  '[$symbol$branch(:$remote_branch)]($style)'
+
+# ~/.config/starship.toml
 
 [git_status]
-style  = "bg:green"
-format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
 
 [nodejs]
 symbol = ""
